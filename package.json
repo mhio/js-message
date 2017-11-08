@@ -1,0 +1,24 @@
+{
+  "name": "@mh/api-message",
+  "version": "0.0.1",
+  "description": "API Message Class",
+  "main": "index.js",
+  "repository": "https://github.com/mh/node-api-message",
+  "author": "MH",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "mocha test/unit test/int",
+    "test:unit": "mocha test/int",
+    "test:int": "mocha test/unit",
+    "test:watch": "nodemon -x mocha test/unit test/int"
+  },
+  "dependencies": {
+    "base62-random": "^0.3.5",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4"
+  }
+}
