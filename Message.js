@@ -1,4 +1,5 @@
-const debug = require('debug')('mh:koa:Message')
+const debug = require('debug')('mh:Api:Message')
+
 const base62 = require('base62-random')
 
 // ## Message
