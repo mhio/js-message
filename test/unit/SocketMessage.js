@@ -23,5 +23,5 @@ describe('SocketMessage', function(){
   it('should load MessageData', function(){
     expect( MessageData ).to.be.ok    
   })
-  
+
 })
