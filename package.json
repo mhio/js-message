@@ -6,15 +6,15 @@
   "repository": "https://github.com/mh/node-api-message",
   "author": "mh",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "scripts": {
     "test": "mocha test/unit test/int",
     "test:unit": "mocha test/int",
     "test:int": "mocha test/unit",
     "test:coverage": "nyc _mocha test/unit test/int && nyc report -r html && nyc check-coverage",
     "test:watch": "nodemon -x mocha test/unit test/int",
-    "release:test": "set -uex; yarn test; npm version prerelease; npm publish --access private --tag testing",
-    "release:patch": "set -uex; rm -rf node_modules; yarn; yarn run test:coverage; npm version patch; git push; npm publish --access private; git push --tags"
+    "release:test": "set -uex; yarn test; npm version prerelease; npm publish --access restricted --tag testing",
+    "release:patch": "set -uex; rm -rf node_modules; yarn; yarn run test:coverage; npm version patch; git push; npm publish --access restricted; git push --tags"
   },
   "dependencies": {
     "base62-random": "^0.3.5"
