@@ -1,5 +1,5 @@
 {
-  "name": "@mh/api-message",
+  "name": "@mhp/api-message",
   "version": "0.0.3-2",
   "description": "API Message Class",
   "main": "index.js",
