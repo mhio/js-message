@@ -6,7 +6,7 @@
   "repository": "https://github.com/mh/node-api-message",
   "author": "mh",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "mocha test/unit test/int",
     "test:unit": "mocha test/int",
