@@ -1,4 +1,4 @@
-const { message, Message, MessageError, MessageData } = require('./Message')
+const { Message, MessageError, MessageData } = require('./Message')
 const { SocketMessage } = require('./SocketMessage')
 
-module.exports = { message, Message, MessageError, MessageData, SocketMessage } 
+module.exports = { Message, MessageError, MessageData, SocketMessage } 
