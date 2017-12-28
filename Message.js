@@ -35,16 +35,8 @@ class MessageData extends Message {
 }
 
 
-function message(){
-  return {
-    id: base62(18),
-    ts: Date.now(),
-  }
-}
-
 
 module.exports = {
-  message,
   Message,
   MessageError,
   MessageData,

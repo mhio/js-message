@@ -1,5 +1,5 @@
 
-const { Message, SocketMessage } = require('../../')
+const { Message, SocketMessage, MessageError } = require('../../')
 
 describe('module', function(){
 
@@ -9,6 +9,10 @@ describe('module', function(){
 
   it('should load the module', function(){
     expect( SocketMessage ).to.be.ok
+  })
+
+  it('should load the module', function(){
+    expect( MessageError ).to.be.ok
   })
 
 })
