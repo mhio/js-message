@@ -5,14 +5,18 @@ const base62 = require('base62-random')
 // ## Message
 
 class Message {
+  static classInit(){
+    this.id_length = 18
+  }
   constructor(){
-    this.id = base62(18)
+    this.id = base62(this.constructor.id_length)
     this.ts = Date.now()
   }
-  debug(message){
-    debug(message)
+  debug(...args){
+    debug(this.id, ...args)
   }
 }
+Message.classInit()
 
 
 // ## MessageError
