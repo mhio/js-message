@@ -32,9 +32,17 @@ class MessageError extends Message {
 // ## Message
 
 class MessageData extends Message {
-  constructor( data ){
+  constructor( data = {} ){
     super()
     this.data = data
+  }
+  set(name, val){
+    if (typeof this.data === 'object') return this.data[name] = val
+    throw new Error(`Can't set value on non object: ${typeof this.data}`)
+  }
+  get(name){
+    if (typeof this.data === 'object') return this.data[name]
+    throw new Error(`Can't get value from non object: ${typeof this.data}`)
   }
 }
 

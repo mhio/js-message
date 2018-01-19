@@ -33,7 +33,7 @@ describe('Message', function(){
   })
 
   it('should create a MessageData', function(){
-    expect( new MessageData({ some: "data" }) ).to.be.ok    
+    expect( new MessageData({ some: "data" }) ).to.be.ok
   })
-
+  
 })
