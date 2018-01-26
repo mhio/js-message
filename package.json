@@ -1,6 +1,6 @@
 {
   "name": "@mhp/Message",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "API Message Class",
   "main": "index.js",
   "repository": "https://github.com/mh/node-Message",
