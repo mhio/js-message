@@ -1,4 +1,4 @@
-# API Message
+# @mhio/message
 
 Standardised messages inside your app, with an id and timestamp.
 
