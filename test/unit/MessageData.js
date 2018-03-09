@@ -1,4 +1,4 @@
-const { MessageData } = require('../../Message')
+const { MessageData } = require('../../src/Message')
 
 describe('MessageData', function(){
 

@@ -3,7 +3,7 @@ const {
   SocketMessage,
   SocketMessageAction,
   SocketMessageReply,
-} = require('../../SocketMessage')
+} = require('../../src/SocketMessage')
 
 
 describe('SocketMessage', function(){

@@ -1,4 +1,4 @@
-const { MessageError } = require('../../Message')
+const { MessageError } = require('../../')
 
 describe('MessageError', function(){
 

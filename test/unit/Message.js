@@ -2,7 +2,7 @@ const {
   Message,
   MessageError,
   MessageData
-} = require('../../Message')
+} = require('../../src/Message')
 
 describe('Message', function(){
 
