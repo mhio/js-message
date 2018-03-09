@@ -1,6 +1,6 @@
 {
   "name": "@mhio/message",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Classes for carrying messages around an app or api",
   "main": "src/index.js",
   "repository": "https://github.com/mhio/js-message",
