@@ -1,6 +1,6 @@
 {
   "name": "@mhio/message",
-  "version": "0.3.3",
+  "version": "0.4.0-0",
   "description": "Classes for carrying messages around an app or api",
   "main": "src/index.js",
   "repository": "https://github.com/mhio/js-message",
@@ -12,7 +12,7 @@
     "test:unit": "mocha test/int",
     "test:int": "mocha test/unit",
     "test:coverage": "nyc _mocha test/unit test/int && nyc report -r html && nyc check-coverage",
-    "test:watch": "nodemon -x mocha test/unit test/int",
+    "test:watch": "nodemon -x 'mocha --bail test/unit test/int || exit 1'",
     "release:test": "set -uex; yarn test; npm version prerelease; npm publish --access public --tag testing",
     "release:patch": "set -uex; rm -rf node_modules; yarn; yarn run test:coverage; npm version patch; git push; npm publish --access public; git push --tags"
   },
