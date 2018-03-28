@@ -19,8 +19,7 @@ class Message {
 Message.classInit()
 
 
-// ## MessageError
-
+/** Simple Error Mesage */
 class MessageError extends Message {
   constructor( error ){
     super()
@@ -29,8 +28,7 @@ class MessageError extends Message {
 }
 
 
-// ## Message
-
+/** Simple Data Message */
 class MessageData extends Message {
   constructor( data = {} ){
     super()
@@ -47,9 +45,46 @@ class MessageData extends Message {
 }
 
 
+/** Base class for JSON:API messages */
+class MessageJsonApi {
+  constructor( meta, links, jsonapi ){
+    this.meta = meta         // Object
+    this.links = links       // Object
+    this.jsonapi = jsonapi   // Object
+  }
+}
+
+/** JSON:API Data */
+class MessageJsonApiData extends MessageJsonApi {
+  constructor( data, included, meta, links, jsonapi ){
+    super(meta, links, jsonapi)
+    this.data = data         // Any
+    this.included = included // Array
+  }
+  set(name, val){
+    return this.data[name] = val
+  }
+  get(name){
+    return this.data[name]
+  }
+}
+
+/** JSON:API Error */
+class MessageJsonApiError extends MessageJsonApi {
+  constructor( error, meta, links, jsonapi ){
+    super(meta, links, jsonapi)
+    this.errors = (error) ? [ error ] : []
+  }
+  addError(error){
+    this.errors.push(error)
+  }
+}
 
 module.exports = {
   Message,
   MessageError,
   MessageData,
+  MessageJsonApi,
+  MessageJsonApiError,
+  MessageJsonApiData,
 }
