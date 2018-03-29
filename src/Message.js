@@ -2,6 +2,7 @@ const debug = require('debug')('mh:Api:Message')
 
 const base62 = require('base62-random')
 
+
 // ## Message
 
 class Message {
@@ -56,6 +57,12 @@ class MessageJsonApi {
 
 /** JSON:API Data */
 class MessageJsonApiData extends MessageJsonApi {
+  static message( data, included, meta, links, jsonapi ){
+    if (!meta) meta = {}
+    meta.id = base62(this.constructor.id_length)
+    meta.ts = Date.now()
+    return new this(data, included, meta, links, jsonapi)
+  }
   constructor( data, included, meta, links, jsonapi ){
     super(meta, links, jsonapi)
     this.data = data         // Any
