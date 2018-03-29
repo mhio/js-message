@@ -6,7 +6,7 @@ const base62 = require('base62-random')
 // ## Message
 
 class Message {
-  static classInit(){
+  static _classInit(){
     this.id_length = 18
   }
   constructor(){
@@ -17,7 +17,7 @@ class Message {
     debug(this.id, ...args)
   }
 }
-Message.classInit()
+Message._classInit()
 
 
 /** Simple Error Mesage */
@@ -48,29 +48,40 @@ class MessageData extends Message {
 
 /** Base class for JSON:API messages */
 class MessageJsonApi {
+
+  static _classInit(){
+    this.id_length = 18
+  }
+
   constructor( meta, links, jsonapi ){
     this.meta = meta         // Object
     this.links = links       // Object
     this.jsonapi = jsonapi   // Object
   }
 }
+MessageJsonApi._classInit()
+
 
 /** JSON:API Data */
 class MessageJsonApiData extends MessageJsonApi {
+
   static message( data, included, meta, links, jsonapi ){
     if (!meta) meta = {}
-    meta.id = base62(this.constructor.id_length)
+    meta.id = base62(this.id_length)
     meta.ts = Date.now()
     return new this(data, included, meta, links, jsonapi)
   }
+
   constructor( data, included, meta, links, jsonapi ){
     super(meta, links, jsonapi)
     this.data = data         // Any
     this.included = included // Array
   }
+
   set(name, val){
     return this.data[name] = val
   }
+
   get(name){
     return this.data[name]
   }
@@ -84,6 +95,7 @@ class MessageJsonApiError extends MessageJsonApi {
   }
   addError(error){
     this.errors.push(error)
+    return true
   }
 }
 
