@@ -1,20 +1,35 @@
 const Benchmark = require('benchmark')
+const base62 = require('base62-random')
+
+function message(){
+  return {
+    id: `${base62(6)}${Math.floor( Date.now() / 10000 )}`
+  }
+}
+function messageHundreth(){
+  return {
+    id: `${base62(4)}${Math.floor( Date.now() / 10 )}`
+  }
+}
 
 const {
-  message,
   Message,
   MessageError,
   MessageData,
-} = require('../../Message')
+} = require('../../src/Message')
 
 const {
   SocketMessage,
   SocketMessageReply,
   SocketMessageAction,
   SocketMessageTransaction
-} = require('../../SocketMessage')
+} = require('../../src/SocketMessage')
 
 class A {
+  constructor(){
+    this.id = 'someid'
+    this.date = Date.now()
+  }
 }
 class B extends A{
 }
@@ -41,6 +56,9 @@ suite.add('SocketMessageReply', function testSocketMessageTransaction(){
 })
 suite.add('plain message', function testmessage(){
   return message()
+})
+suite.add('plain message', function testmessage(){
+  return messageHundreth()
 })
 
 .on('cycle', event => console.log(String(event.target)) )
