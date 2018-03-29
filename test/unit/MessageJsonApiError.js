@@ -35,6 +35,12 @@ describe('MessageJsonApiError', function(){
       expect( md.errors ).to.have.length(1)
       expect( md.errors[0] ).to.be.instanceOf( Error )
     })
+
+    it('should add an error', function(){
+      expect( md.addError(new Error('foo')) ).to.equal(true)
+      expect( md.errors ).to.have.length(2)
+    })
+
   
     it('should JSON to nothing', function(){
       md = new MessageJsonApiError()
