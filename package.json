@@ -1,6 +1,6 @@
 {
   "name": "@mhio/message",
-  "version": "0.4.0",
+  "version": "0.5.0-0",
   "description": "Classes for carrying messages around an app or api",
   "main": "src/index.js",
   "repository": "https://github.com/mhio/js-message",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "benchmark": "^2.1.4",
     "chai": "^4.1.2",
-    "mocha": "^4.0.1",
+    "mocha": "^6.2.2",
     "nyc": "^11.3.0"
   },
   "nyc": {
